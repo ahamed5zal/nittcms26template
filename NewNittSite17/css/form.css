@@ -1,0 +1,50 @@
+/* CMS Administrative Form Styles (nittinner look) */
+.cms-admin-boxed form {
+    width: auto;
+    margin: 20px auto;
+    position: relative;
+    line-height: 24px;
+    color: #333;
+}
+.cms-admin-boxed input, .cms-admin-boxed select, .cms-admin-boxed textarea {
+    width: auto;
+    margin: 5px;
+    background-color: #fff;
+    box-shadow: none !important;
+    border: 1px solid rgba(150,150,150,0.5) !important;
+    padding: 8px 12px !important;
+    border-radius: 4px;
+}
+.cms-admin-boxed fieldset {
+    border: 1px solid #eee !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+    border-radius: 8px;
+}
+.cms-admin-boxed legend {
+    margin: 0 10px !important;
+    padding: 0 10px !important;
+    font-weight: bold;
+    color: #012951;
+    width: auto;
+    border: none;
+    font-size: 1.2em;
+}
+.cms-admin-boxed input[type='button'], .cms-admin-boxed input[type='submit'] {
+    cursor: pointer;
+    background-color: #256b66 !important;
+    border: none !important;
+    color: #fff !important;
+    margin: 10px 5px;
+    padding: 10px 25px !important;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.cms-admin-boxed input[type='button']:hover, .cms-admin-boxed input[type='submit']:hover {
+    background-color: #1a4d49 !important;
+}
+.cms-admin-boxed textarea:focus, .cms-admin-boxed input:focus {
+    border: 1px solid #ea6645 !important;
+    outline: none;
+}

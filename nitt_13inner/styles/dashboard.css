@@ -1,0 +1,20 @@
+.actionbar {
+
+}
+#cms-actionbarModule {
+	display: inline;
+}
+#cms-actionbarPage {
+	display: inline;
+	float: right;
+
+}
+#actionbar {
+	border: 1px solid green;
+    font-size: 15px;
+    padding: 6px;
+    background-color: #558C89;
+}
+.cms-actionbarPageItem {
+	padding-right:7px;
+}

@@ -1,0 +1,29 @@
+.goog-te-gadget-simple {
+background-color: transparent !important; 
+border-left: 0px !important;
+border-top: 0px !important;
+border-bottom: 0px !important;
+border-right: 0px !important;
+font-size:10pt !important;
+padding-bottom:0 !important;
+padding-top:0 !important;
+}
+#google_translate_element {
+max-width: 88px;
+overflow: hidden;
+float: left;
+}
+.goog-te-gadget img {
+display: none;
+background-image: none !important;
+}
+.goog-te-gadget-simple .goog-te-menu-value {
+color: #FFFFFF !important;
+font-size: 10pt;
+}
+.goog-te-gadget-simple span a span {
+display: none;
+}
+.goog-te-gadget-simple span a:after {
+content: "Translate ▼";
+}

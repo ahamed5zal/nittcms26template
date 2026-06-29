@@ -1,0 +1,694 @@
+<?php
+if(!defined('__PRAGYAN_CMS')) { 
+	header($_SERVER['SERVER_PROTOCOL'].' 403 Forbidden');
+	echo "<h1>403 Forbidden<h1><h4>You are not authorized to access the page.</h4>"; echo '<hr>'.$_SERVER['SERVER_SIGNATURE']; exit(1); 
+} 
+global $userId,$action; 
+if($userId!=0&&$action=='login'&&$GLOBALS['pageFullPath']=='/') 
+{ 
+	header('Location: https://www.nitt.edu/');
+}
+?>
+<!DOCTYPE html>
+
+<!--[if IE 7]>
+
+<html class="ie ie7" lang="en-US">
+
+<![endif]-->
+
+<!--[if IE 8]>
+
+<html class="ie ie8 no-js lt-ie9" lang="en-US">
+
+<![endif]-->
+
+<!--[if !(IE 7) | !(IE 8) ]><!-->
+
+<html lang="en-US">
+
+<!--<![endif]-->
+
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+
+	<!-- Page Title 
+
+	================================================== -->
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<title>National Institute of Technology, Trichy</title>
+
+<!-- <link rel='dns-prefetch' href='//maps.googleapis.com' /> -->
+<link rel='dns-prefetch' href='//s.w.org' />       
+<script type=application/ld+json>{ "@context" : "https://schema.org", "@type" : "WebSite", "name" : "NIT Trichy", "alternateName" : "National Institute of Technology, Tiruchirappalli", "url" : "https://www.nitt.edu" }</script><script type=application/ld+json>{ "@context" : "https://schema.org", "@type" : "CollegeOrUniversity", "url" : "https://www.nitt.edu", "logo": "https://www.nitt.edu/home/NIT_Trichy_logo.jpg", "contactPoint" : [{ "@type" : "ContactPoint", "telephone" : "+91-431-2503000", "contactType" : "customer service" },{ "@type" : "ContactPoint", "telephone" : "+91-431-2504000", "contactType" : "technical support" }],"address": {"@type": "PostalAddress","addressLocality": "Tiruchirappalli","addressRegion": "Tamil Nadu","postalCode": "620015","streetAddress": "Tanjore Main Road"},"name": "NIT Trichy","foundingDate":"1964" }</script>        
+<!--Script to show circle while loading webpage-->
+		<script type="text/javascript">
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+        <!--On load emoji-->
+		<style type="text/css">
+            img.wp-smiley,
+            img.emoji {
+            	display: inline !important;
+            	border: none !important;
+            	box-shadow: none !important;
+            	height: 1em !important;
+            	width: 1em !important;
+            	margin: 0 .07em !important;
+            	vertical-align: -0.1em !important;
+            	background: none !important;
+            	padding: 0 !important;
+            }
+        </style>
+
+
+
+<!-- <link rel='stylesheet' id='fonts-OpenSans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A200%2C400%2C300%2C600&#038;ver=4.6.5' type='text/css' media='all' /> -->
+
+<!-- <link rel='stylesheet' id='fonts-Montserrat-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A400%2C700&#038;ver=4.6.5' type='text/css' media='all' /> -->
+
+<link rel='stylesheet' id='bootstrap-css'  href='<?php echo $TEMPLATEBROWSERPATH; ?>/css/bootstrap.css' type='text/css' media='all' />
+
+<link rel='stylesheet' id='selectize-css'  href='<?php echo $TEMPLATEBROWSERPATH; ?>/css/selectize.css' type='text/css' media='all' />
+
+<link rel='stylesheet' id='owl-car-css'  href='<?php echo $TEMPLATEBROWSERPATH; ?>/css/owl-carousel.css' type='text/css' media='all' />
+
+
+<link rel='stylesheet' id='rev-settings-css'  href='<?php echo $TEMPLATEBROWSERPATH; ?>/css/revsettings.css' type='text/css' media='all' />
+
+<link rel='stylesheet' id='font-awesome-css'  href='<?php echo $TEMPLATEBROWSERPATH; ?>/css/font-awesome-4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+
+<link rel='stylesheet' id='style.css' href='<?php echo $TEMPLATEBROWSERPATH; ?>/css/style.css' type='text/css' media='all' />
+
+<link rel='stylesheet' id='color-css'  href='<?php echo $TEMPLATEBROWSERPATH; ?>/css/color.php' type='text/css' media='all' />
+
+<link rel='stylesheet' id='js_composer_front-css'  href='<?php echo $TEMPLATEBROWSERPATH; ?>/css/js_composer.min.css' type='text/css' media='all' />
+
+<link rel='stylesheet' id='cms-elements-css'  href='<?php echo $TEMPLATEBROWSERPATH; ?>/css/cms-elements.css' type='text/css' media='all' />
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tribe_events_linked_posts = {"post_types":{"tribe_venue":"venue","tribe_organizer":"organizer"}};
+/* ]]> */
+</script>
+
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery.js'></script>
+
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery-migrate.min.js'></script>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+/* ]]> */
+</script>
+
+<style type="text/css">
+                #header{
+margin: 0 auto;
+}
+
+@media (max-width:991px){  
+}
+
+.container .has-sidebar .row{
+    margin:0;
+}
+.blog-listing .col-sm-6:nth-child(2n+1){
+   clear:both;
+}
+
+.tribe-events-single-event-title{
+    font-size: 25px;
+}
+.tribe-events-schedule h2{
+    font-size: 18px;
+    display: inline-block;
+}
+.single-tribe_events .tribe-events-schedule .tribe-events-cost{
+  vertical-align: inherit;
+}
+</style>
+
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://demo.vegatheme.com/universo/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><!--[if IE  8]><link rel="stylesheet" type="text/css" href="https://demo.vegatheme.com/universo/wp-content/plugins/js_composer/assets/css/vc-ie8.min.css" media="screen"><![endif]-->
+<link rel="icon" href="<?php echo $TEMPLATEBROWSERPATH; ?>/nittlogo-150x150.jpg" sizes="32x32" />
+
+<link rel="icon" href="<?php echo $TEMPLATEBROWSERPATH; ?>/nittlogo-300x300.jpg" sizes="192x192" />
+
+<link rel="apple-touch-icon-precomposed" href="<?php echo $TEMPLATEBROWSERPATH; ?>/nittlogo-300x300.jpg" />
+
+<meta name="msapplication-TileImage" content="<?php echo $TEMPLATEBROWSERPATH; ?>/nittlogo-300x300.jpg" />
+
+<style type="text/css" class="options-output">
+body{font-weight:normal;
+    font-style:normal;
+    }
+</style>
+
+<style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1439533085489{background-color: #011c38 !important;}.vc_custom_1439374049302{padding-top: 50px !important;}.vc_custom_1439435173873{padding-top: 50px !important;}.vc_custom_1439440500698{padding-top: 50px !important;}.vc_custom_1439454155588{padding-top: 50px !important;}.vc_custom_1439435173873{padding-top: 50px !important;}.vc_custom_1439455907540{padding-top: 50px !important;padding-bottom: 50px !important;}.vc_custom_1439454777714{padding-top: 20px !important;padding-bottom: 20px !important;padding-left: 30px !important;background-color: #012951 !important;}.vc_custom_1473735707331{padding-top: 20px !important;padding-right: 30px !important;padding-bottom: 55px !important;background-color: #012951 !important;}</style><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>
+<style>
+.blink {
+font-size: 1.2em;
+margin: 2px;
+text-align: center;
+animation-name: example;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    0%   {color: red;}
+    50%  {color: blue;}
+    100% {color: green;}
+}
+
+.owl-item {
+max-height: 320px;
+}
+
+.upcoming-header {
+   margin-top: 5px;
+   margin-bottom: 0px;
+}
+
+article > h6 {
+   margin-top: 2px;
+   margin-bottom: 5px;
+}
+
+</style>
+</head>
+
+<body class="home page page-id-300 page-template page-template-page-templates page-template-template-canvas page-template-page-templatestemplate-canvas-php wpb-js-composer js-comp-ver-4.12.1 vc_responsive">
+
+
+<div class="images-preloader">
+    <div class="preloader4"></div>
+</div>
+
+<div id="wrapper">
+    <div class="navigation-wrapper">
+        <!--Topmost set of links-->
+        <div class="secondary-navigation-wrapper">
+            <div class="container">
+            
+                <ul data-breakpoint="800" id="menu-top-menu-0" class="secondary-navigation list-unstyled pull-left">
+                <li id="menu-item-1" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1"><a  title="Webmail" href="https://www.nitt.edu/home/students/facilitiesnservices/tp/">Placements</a>
+                </li>
+                <li id="menu-item-2" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2"><a  title="Library" href="https://www.nitt.edu/home/students/facilitiesnservices/library/">Library</a></li>
+                <li id="menu-item-3" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3"><a  title="Departments" href="https://www.nitt.edu/home/academics/departments/">Departments</a>
+                </li>
+		<li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4"><a  title="Events" href="https://www.nitt.edu/home/students/events/">Events</a>
+                </li>
+		<li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5"><a  title="CC" href="https://www.nitt.edu/home/students/facilitiesnservices/ComputerSupportGroup/">CC</a>
+                </li>
+               <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a  title="Translate" href="#" data-toggle="collapse" data-target="#translate-bar">Translate</a></li>
+		<li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8"><a target="_blank" title="Facebook" href="https://www.facebook.com/NITT.Official/"><i style="color:white;" onmouseover="this.style.color='#ea6645'" onmouseout="this.style.color='white'" class="fa fa-facebook"></i></a></li>
+		<li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a target="_blank" title="Twitter" href="
+https://twitter.com/ReachNITT"><i style="color:white;" onmouseover="this.style.color='#ea6645'" onmouseout="this.style.color='white'" class="fa fa-twitter"></i></a></li>
+<li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9">
+                        <a target="_blank"  title="Youtube" href="https://www.youtube.com/channel/UCEPOEe5azp3FbUjvMwttPqw">
+                            <i style="color:white;" onmouseover="this.style.color='#ea6645'" onmouseout="this.style.color='white'" class="fa fa-youtube-play"></i>
+                        </a>
+                    </li>
+		<li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9">
+                        
+                            <i style="color:white;" onmouseover="this.style.color='#ea6645'" onmouseout="this.style.color='white'" class="fa fa-linkedin"></i>
+		</li>		
+
+                </ul>
+
+                <div class="search">
+                    <form class="input-group">
+                        <span class="input-group-btn">
+                        <button type="button" id="search-submit" class="btn" onclick="window.location.href='/search'">
+                        <i class="fa fa-search"></i>
+                        </button>
+                        </span>
+                    </form><!-- /.input-group -->
+                </div>
+
+                <ul data-breakpoint="800" id="menu-top-menu-1" class="secondary-navigation list-unstyled pull-right">
+                <li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5"><a  target="_blank" title="Webmail" href="https://webmail.nitt.edu">Webmail</a></li>
+                <li id="menu-item-6" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6"><a  title="Sitemap" href="/sitemap">Sitemap</a></li>
+                <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a  title="Dashboard" href="#" data-toggle="collapse" data-target="#action-bar">Dashboard</li>
+                </ul>
+            
+            </div><!--/.container -->
+        </div><!-- /.secondary-navigation -->
+        <!--Dashboard-->
+        <div class="container collapse" id="action-bar">
+         <?php echo $ACTIONBARMODULE;?>
+         <?php echo $ACTIONBARPAGE;?>
+        </div>
+
+        <!--translate-->
+		<div class="container collapse" id="translate-bar">
+
+        <table style="width:inherit;">
+        <tbody>
+        <tr style="vertical-align: text-top;">
+        <td>
+        <a href="#" class="goog-te-menu2-item-selected">
+        <div style="white-space: nowrap;">
+        <span class="text"><Strong>Select Language</Strong></span>
+        </div>
+        </a>
+        <a href="#" class="goog-te-menu2-item">
+        <div style="white-space: nowrap;"><span class="text">Afrikaans</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Albanian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Amharic</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Arabic</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Armenian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Azerbaijani</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Basque</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Belarusian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Bengali</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Bosnian</span></div></a>
+        </td>
+        <td class="goog-te-menu2-colpad">&nbsp;</td><td><a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Bulgarian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Catalan</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Cebuano</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Chichewa</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Chinese (Simplified)</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Chinese (Traditional)</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Corsican</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Croatian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Czech</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Danish</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Dutch</span></div></a>
+        </td>
+        <td class="goog-te-menu2-colpad">&nbsp;</td>
+        <td>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Esperanto</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Estonian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Filipino</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Finnish</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">French</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Frisian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Galician</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Georgian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">German</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Greek</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Gujarati</span></div></a>
+        </td>
+        <td class="goog-te-menu2-colpad">&nbsp;</td>
+        <td>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Haitian Creole</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Hausa</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Hawaiian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Hebrew</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Hindi</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Hmong</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Hungarian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Icelandic</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Igbo</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Indonesian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Irish</span></div></a>
+        </td>
+        <td class="goog-te-menu2-colpad">&nbsp;</td>
+        <td><a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Italian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Japanese</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Javanese</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Kannada</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Kazakh</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Khmer</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Korean</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Kurdish (Kurmanji)</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Kyrgyz</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Lao</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Latin</span></div></a>
+        </td>
+        <td class="goog-te-menu2-colpad">&nbsp;</td>
+        <td><a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Latvian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Lithuanian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Luxembourgish</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Macedonian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Malagasy</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Malay</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Malayalam</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Maltese</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Maori</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Marathi</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Mongolian</span></div></a>
+        </td>
+        <td class="goog-te-menu2-colpad">&nbsp;</td>
+        <td><a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Myanmar (Burmese)</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Nepali</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Norwegian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Pashto</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Persian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Polish</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Portuguese</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Punjabi</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Romanian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Russian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Samoan</span></div></a>
+        </td>
+        <td class="goog-te-menu2-colpad">&nbsp;</td>
+        <td><a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Scots Gaelic</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Serbian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Sesotho</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Shona</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Sindhi</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Sinhala</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Slovak</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Slovenian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Somali</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Spanish</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Sundanese</span></div></a>
+        </td><td class="goog-te-menu2-colpad">&nbsp;</td>
+        <td><a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Swahili</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Swedish</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Tajik</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Tamil</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Telugu</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Thai</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Turkish</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Ukrainian</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Urdu</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Uzbek</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Vietnamese</span></div></a>
+        </td>
+        <td class="goog-te-menu2-colpad">&nbsp;</td><td>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Welsh</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Xhosa</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Yiddish</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Yoruba</span></div></a>
+        <a href="#" class="goog-te-menu2-item"><div style="white-space: nowrap;"><span class="text">Zulu</span></div></a>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+<!--Main navbar with logo and menu options start -->
+        <div class="primary-navigation-wrapper">
+            <header class="navbar" id="top">
+                <div class="container">
+                <a class="logo" href="#">
+                    <!--<img src="<?php echo $TEMPLATEBROWSERPATH; ?>/nittfulllogo.png" class = "image-full" alt="">-->
+		    <!--<img src="./nittlogo-new.png" class = "image-full" alt="">-->
+		    <img src="./nitt.png" class = "image-full" alt="">
+                    <img src="./nittt-mob-latest.png" class = "image-mobile" alt="">
+                </a>
+                </div>
+                <div class="container">
+                    <!--Logo part start-->
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                       <!-- <div class="navbar-brand nav" id="brand">
+                            
+                        </div>-->
+                    </div>
+                    <!--logo part ends-->
+                    <!--Menu options start -->
+                    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-left" >
+
+                    <ul data-breakpoint="800" id="menu-main-menu" class="nav navbar-nav" >
+                        <li id="menu-item-415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-415 ">
+                        <a  title="Home" href="#">Home </a>
+                        </li>
+                        <li id="menu-item-124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-124">
+                        <a  title="About Us" href="/about/">About Us</a>
+                        </li>
+                        <li id="menu-item-197" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-197 ">
+                        <a  title="Administration" href="/administration/">Administration </a>
+                        </li>
+                        <li id="menu-item-489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-489 ">
+                        <a  title="Academic" href="https://www.nitt.edu/home/academics/">Academic </a>
+                        </li>
+                        <li id="menu-item-94" class="menu-item menu-item-type-custom menu-item-object-page menu-item-94 ">
+                        <a  title="Admission" href="https://www.nitt.edu/home/admissions/">Admission </a>
+                        </li>
+                        
+
+                        <li id="menu-item-93" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-93 ">
+                        <a  title="Departments" href="https://www.nitt.edu/home/academics/departments/">Departments / Centres <span class="caret"></span></a>
+                        <div class="dropdown-menu">
+                            <div class="container-fluid">
+                            <div class = "row">
+                            <p style="font-weight:bold;margin:5px;font-size:30px;"><a href="/academics/departments/">Departments / Centres</a></p>
+                            <div class="col-sm-4">
+                        	<ul class="list-unstyled">
+                            <li><a href=/academics/departments/architecture>Architecture</a></li>
+                            <li><a href=/academics/departments/cecase>CECASE</a></li>
+                            <li><a href=/academics/departments/chem>Chemical Engineering</a></li>
+                            <li><a href=/academics/departments/chemistry>Chemistry</a></li>
+                            <li><a href=/academics/departments/civil>Civil Engineering</a></li>
+                            <li><a href=/academics/departments/ca>Computer Applications</a></li></ul>
+                            </div>
+                            <div class="col-sm-4">
+                        	<ul class="list-unstyled">
+                            <li><a href=/academics/departments/cse>Computer Science & Engineering</a></li>
+                            <li><a href=/academics/departments/dee>DEE</a></li>
+                            <li><a href=/academics/departments/eee>Electrical & Electronics Engineering</a></li>
+                            <li><a href=/academics/departments/ece>Electronics & Communication Engineering</a></li>
+                            <li><a href=/academics/departments/humanities>Humanities and Social Sciences</a></li>
+                            <li><a href=/academics/departments/ice>Instrumentation & Control Engineering</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-sm-4">
+                            <ul class="list-unstyled">
+                            <li><a href=/academics/departments/management>Management Studies</a></li>
+                            <li><a href=/academics/departments/maths>Mathematics</a></li>
+                            <li><a href=/academics/departments/mech>Mechanical Engineering</a></li>
+                            <li><a href=/academics/departments/meta>Metallurgical & Materials Engineering</a></li>
+                            <li><a href=/academics/departments/physics>Physics</a></li>
+                            <li><a href=/academics/departments/prod>Production Engineering</a></li>
+                            </ul>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <p style="font-weight:bold; margin:5px; font-size:30px;"><a href="/students/facilitiesnservices/">Centres/Common facility</a></p>
+                             <div class="col-sm-4">
+                            <ul class="list-unstyled">
+                            <li><a href="/students/facilitiesnservices/centralworkshop/">Central Workshop</a></li>
+                            <li><a href="/students/facilitiesnservices/ComputerSupportGroup/">Computer Support Group</a></li>
+                            <li><a href="/students/facilitiesnservices/em/">Estate Maintenance</a></li><li><a href="/students/facilitiesnservices/hospital/">Hospital</a></li>
+                            <li><a href="/students/facilitiesnservices/ccs/">Campus Communication Services</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-sm-4">
+                            <ul class="list-unstyled">
+                            <li><a href="/students/facilitiesnservices/hostelsnmess/">Hostels</a></li>
+                            <li><a href=/students/facilitiesnservices/lhc>Lecture Hall Complex/Orion</a></li>
+                            <li><a href="/students/facilitiesnservices/firstyearcoordinator/">First Year Coordinator Office</a></li>
+
+                            <li><a href="/students/facilitiesnservices/library/">Library</a></li>
+                            <li><a href="/students/facilitiesnservices/security/">Security</a></li> 
+			   </ul>
+                            </div>
+                            <div class="col-sm-4">
+                            <ul class="list-unstyled">
+                            <!--<li><a target="_blank" href="http://nittcoe.com/">Siemens CoE</a></li>-->
+			                <li><a target="_blank" href="https://manufacturingcoe.com/">CoE in Manufacturing</a></li>
+ 			                <li><a target="_blank" href="/rc/cedi">CEDI</a></li>
+                            <li><a href="/rc/sif/">Sophisticated Instrumentation Facility</a></li>
+                            <li><a href="/students/facilitiesnservices/sportscenter/">Physical Education / Sports Center</a></li>
+                            <li><a href="/students/facilitiesnservices/tp/">Training and Placement</a></li>
+                            <li><a href="/students/facilitiesnservices/transport/">Transport</a></li>
+                            
+                            </ul>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        </li>
+                        <li id="menu-item-100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-100">
+                        <a  title="Departments" href="https://www.nitt.edu/home/academics/departments/">Departments</a>
+                        </li>
+                        <li id="menu-item-88" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88">
+                        <a  title="Research and Consultancy" href="https://www.nitt.edu/home/rc">Research & Consultancy</a>
+                        </li>
+                        <li id="menu-item-415-1" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-415 ">
+                        <a  title="Links">Important Links <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/students/facilitiesnservices/tp/">Placements</a></li>
+                            <li><a href="/sitemap">Sitemap</a></li>
+                            <li><a href="https://webmail.nitt.edu">Webmail</a></li>
+                            <li><a href="#">Search</a></li>
+                        </ul>
+                        </li>
+                    </ul>   
+                    </nav><!-- Menu options part ends-->
+                </div><!-- /.container -->
+            </header><!-- /.navbar -->
+        </div><!-- /.primary-navigation -->
+
+        <div class="background">
+        </div>
+    </div>
+    <!-- end Header -->
+<?php echo $CONTENT; ?>
+<!-- Footer -->
+<footer id="page-footer">
+    <section id="footer-content">
+	<h6 style="display:none;">footer</h6>
+        <div class="container">
+        <div class="row">
+<div class="col-md-2 col-sm-4" style="height:210px;">
+    <div id="text-3-0" class="widget widget_text">
+    <a href="/academics/"><h4>Academics</h4></a>           
+        <div class="textwidget">
+            <aside>
+                <ul class="list-links">
+                            <li><a href=/academics/programmes>Academic Programmes</a></li>
+                            <li><a href=/academics/departments>Departments</a></li>
+                            <li><a href=/academics/faculty>Faculty</a></li>
+                            <li><a href=/academics/rules>Rules and Regulations</a></li>
+                            <li><a href=/academics/scholarships>Scholarships</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-2 col-sm-4" style="height:210px;">
+    <div id="text-3-1" class="widget widget_text">
+    <a href="/admissions/"><h4>Admissions</h4></a>             
+        <div class="textwidget">
+            <aside>
+                <ul class="list-links">
+                            <li><a href=/admissions/btech>B.Tech</a> / <a href=/admissions/barch>B.Arch.</a></li>
+                            <li><a href=/admissions/mtech>M.Tech</a> / <a href=/admissions/mtech>M.Arch.</a></li>
+                            <li><a href=/admissions/msc>M.Sc</a></li>
+                            <li><a href=/admissions/mca>MCA</a></li>
+                            <li><a href=/admissions/mba>MBA</a></li>
+                            <li><a href=/admissions/ma>MA</a></li>
+                            <li><a href=/admissions/ms>MS (By Research)</a></li>
+                            <li><a href=/admissions/phd>Ph.D.</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-2 col-sm-4" style="height:210px;">
+    <div id="text-3-2" class="widget widget_text">
+    <a href="/students/"><h4>Student life</h4></a>            
+        <div class="textwidget">
+            <aside>
+                <ul class="list-links">
+                            <li><a href=/students/events>Events</a></li>
+                            <li><a href=/students/clubsnassocs>Clubs & Associations</a></li>
+                            <li><a href=/students/facilitiesnservices>Facilities & Services</a></li>
+                            <li><a href="/students/facilitiesnservices/hostelsnmess/">Hostel & Messes</a></li>
+                            <li class=noBorder><a href=/students/office>Office of the Dean (Students)</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</div>
+<div class="col-md-2 col-sm-4" style="height:210px;">
+    <div id="text-3-3" class="widget widget_text">
+    <h4>Other Links</h4>            
+        <div class="textwidget">
+            <aside>
+                <ul class="list-links">
+                            <li><a href=/other/tenders>Tenders and Notices</a></li>
+                            <li><a href=/other/jobs>Job Opportunities</a></li>
+                            <li><a href=/righttoinfoact>RTI</a></li>
+                            <li><a href=http://alumni.nitt.edu target=_blank >Alumni</a></li>
+                            <li><a href=/sitemap>Sitemap</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</div>
+<div class="col-md-3 col-sm-4" style="height:210px;">
+    <div id="text-3-4" class="widget widget_text">
+    <a href="/contact/"><h4>Contact Us</h4></a>       
+        <div class="textwidget">
+            <aside>
+                <ul class="list-unstyled">
+                            <li>National Institute of Technology<br>Tiruchirappalli - 620015<br>Tamil Nadu, INDIA<br>Fax: +91-431-2500133<br></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</div>
+</div>
+</div><!--/container-->
+<div class="background">
+</div>
+</section> <!--/footer-content-->
+
+<!--Footer bottom-->
+<section id="footer-bottom">
+	<h6 style="display:none;">footer-bottom</h6>
+	<div class="container">
+        <div class="footer-inner">
+            <div class="copyright"><p>&copy; <a href=/webteam>WebTeam NIT Trichy</a><br><span class=break>National Institute of Technology, Tiruchirappalli</span></p></div>
+            <div class="footer-options">
+                <ul data-breakpoint="800" id="menu-footer-menu" class="secondary-navigation list-unstyled pull-right" style="margin:10px;">
+                <li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a  title="Home" href="#">Home</a></li>
+                <li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14"><a  title="About" href="/about">About</a></li>
+                <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13"><a  title="Contact" href="/contact">Contact</a></li>
+                </ul>     
+            </div>               
+        </div><!-- /.footer-inner -->
+    </div><!-- /.container -->
+</section><!-- /.footer-bottom -->
+
+</footer> 
+    
+</div><!-- /wrapper -->
+
+
+
+<script type="text/javascript"></script>
+
+
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/scripts.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery.blockUI.min.js'></script>
+
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/woocommerce.min.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery.cookie.min.js'></script>
+
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/bootstrap.min.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery.fitvids.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery-migrate-1.2.1.min.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/selectize.min.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery.placeholder.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/icheck.min.js'></script>
+
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/owl.carousel.min.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery.vanillabox-0.1.5.min.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/retina-1.1.0.min.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/custom.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/wp-embed.min.js'></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/js_composer_front.min.js'></script>
+
+    <script type="text/javascript">
+        
+        //<![CDATA[
+        jQuery(document).ready(function() {
+            
+            jQuery( '.ktweet .kfooter a:not(.ktogglemedia)' ).click(function(e) {
+
+                // Prevent Click from Reloading page
+                e.preventDefault();
+
+                var khref = jQuery(this).attr('href');
+                window.open( khref, 'twitter', 'width=600, height=400, top=0, left=0');
+
+            });
+            
+        });
+        //]]>
+        
+    </script>
+        
+</body>
+</html>

@@ -1,0 +1,390 @@
+<?php
+if(!defined('__PRAGYAN_CMS')) { 
+	header($_SERVER['SERVER_PROTOCOL'].' 403 Forbidden');
+	echo "<h1>403 Forbidden<h1><h4>You are not authorized to access the page.</h4>";
+	echo '<hr/>'.$_SERVER['SERVER_SIGNATURE'];
+	exit(1);
+}
+
+$HEADER_CMS=<<<TOPNAV
+ <div id="toplinkbar">		
+      <div class="left" style="margin-left:1%">		
+        <a href="#">Students</a> |
+        <a href="#">Faculty</a>&nbsp;|
+        <a href="#">Placements</a>&nbsp;|
+        <a href="#">Library</a>&nbsp;|
+        <a href="#">Departments</a>
+       <div id="google_translate_element"></div>
+      </div>   
+   
+        <input class="searchBox" title="search NITT" type="text" name="search" placeholder="search NITT">
+      
+      <div class="right"style="margin-right:1%">
+		<a href="#">Sign In</a> |
+		<a href="#">Webmail</a>&nbsp;|
+		<a href="#">Sitemap</a>&nbsp;|
+		<a href="#">Contact</a>&nbsp;|
+		<a href="#">Show Dashboard</a>
+      </div>
+    </div>
+    <div id="toplinkbar-alter">
+      <button type="button" class="navbar-toggle" id="toplinks" style="cursor: pointer;">
+        <span class="icon-bar"></span>
+        <span class="icon-bar" style="margin-top: 4px;"></span>
+      </button>
+      <a class="navbar-brand" href="#">Links</a>
+    </div>
+	<div id="sidelinks">
+      <li><a href="#">Students</a></li>
+      <li><a href="#">Faculty</a></li>
+      <li><a href="#">Placements</a></li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Departments</a></li>
+      <li><a href="#">Sign In</a></li>
+      <li><a href="#">Webmail</a></li>
+      <li><a href="#">Sitemap</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Show Dashboard</a></li>
+    </div>
+	<div id="header">
+      <img src="$TEMPLATEBROWSERPATH/images/site-header.png" style="position: relative;bottom: 13%;" />
+    </div>
+TOPNAV;
+
+$HEADER_CMS.=<<<MAINNAV
+    <div id="main-nav">
+      <ul class="menu">
+        <li class="navigate"><a href="#">About</a></li>
+        <div class="menudrop" style="left: 0px; display: none;">
+	      <div class="container">
+		    <div class="col_4">
+			<h1>About the University</h1>
+             <ul>
+			   <li><a href="About/index.html">About</a></li>
+			   <li><a href="">At A Glance</a></li>
+			   <li><a href="">History</a></li>
+			   <li><a href="">Director's Welcome</a></li>
+			   <li><a href="">Other NITs</a></li>
+			   <li><a href="">Mission, Vision &amp; Values</a></li>
+			 </ul>
+             <h1>Campus Safety</h1>
+			 <ul><li><a href="">Campus Safety</a></li></ul>
+  		   </div>
+		   <div class="col_4">
+			 <h1>University Leadership</h1>
+			 <ul>
+			   <li><a href="">Office of the President</a></li>
+			   <li><a href="">Administrative Offices</a></li>
+			 </ul>
+             <h1>Visiting Campus</h1>
+			 <ul>
+			   <li><a href="">Visiting Campus</a></li>
+			   <li><a href="">Maps and Directions</a></li>
+			   <li><a href="">Connect with Us</a></li>
+			 </ul>
+  		   </div>
+		   <div class="col_4">
+			<h1>Once students come to NITT, they stay!</h1>
+			<p>Our 90% retention rate beats the national average of 65%, and 20% of our undergraduates go on to receive a graduate degree here.</p>
+		   </div>
+	     </div>
+       </div>
+       <li class="navigate"><a href="#">Administration</a></li>
+       <div class="menudrop" style="left: 0px; display: none;">
+	     <div class="container">
+		   <div class="col_4">
+			 <h1>Administration</h1>
+             <ul>
+			   <li><a href="">About</a></li>
+			   <li><a href="">At A Glance</a></li>
+			   <li><a href="">History</a></li>
+			   <li><a href="">Director's Welcome</a></li>
+			   <li><a href="">Other NITs</a></li>
+			   <li><a href="">Mission, Vision &amp; Values</a></li>
+			 </ul>
+             <h1>Campus Safety</h1>
+ 			 <ul>
+			   <li><a href="">Campus Safety</a></li>
+			 </ul>
+  		   </div>
+		   <div class="col_4">
+			 <h1>University Leadership</h1>
+ 			 <ul>
+			   <li><a href="">Office of the President</a></li>
+			   <li><a href="">Administrative Offices</a></li>
+			 </ul>
+             <h1>Visiting Campus</h1>
+			 <ul>
+			   <li><a href="">Visiting Campus</a></li>
+			   <li><a href="">Maps and Directions</a></li>
+			   <li><a href="">Connect with Us</a></li>
+			 </ul>
+		   </div>
+ 		   <div class="col_4">
+			 <h1>Once students come to NITT, they stay!</h1>
+			 <p>Our 90% retention rate beats the national average of 65%, and 20% of our undergraduates go on to receive a graduate degree here.</p>
+		   </div>
+     	 </div>
+       </div>
+       <li class="navigate"><a href="#">Academic</a></li>
+<div class="menudrop" style="left: 0px; display: none;">
+	<div class="container">
+		<div class="col_4">
+			<h1>Academic</h1>
+
+			<ul>
+				<li><a href="">About</a></li>
+				<li><a href="">At A Glance</a></li>
+				<li><a href="">History</a></li>
+				<li><a href="">Director's Welcome</a></li>
+				<li><a href="">Other NITs</a></li>
+				<li><a href="">Mission, Vision &amp; Values</a></li>
+			</ul>
+
+			<h1>Campus Safety</h1>
+			
+			<ul>
+				<li><a href="">Campus Safety</a></li>
+			</ul>
+		</div>
+		
+		<div class="col_4">
+			<h1>University Leadership</h1>
+			
+			<ul>
+			<li><a href="">Office of the President</a></li>
+			<li><a href="">Administrative Offices</a></li>
+			</ul>
+
+			<h1>Visiting Campus</h1>
+			
+			<ul>
+			<li><a href="">Visiting Campus</a></li>
+			<li><a href="">Maps and Directions</a></li>
+			<li><a href="">Connect with Us</a></li>
+			</ul>
+		</div>
+		
+		<div class="col_4">
+			<h1>Once students come to NITT, they stay!</h1>
+			<p>Our 90% retention rate beats the national average of 65%, and 20% of our undergraduates go on to receive a graduate degree here.</p>
+		</div>
+
+	</div>
+</div>
+
+<li class="navigate"><a href="#">Admission</a></li>
+
+<div class="menudrop" style="left: 0px; display: none;">
+	<div class="container">
+		<div class="col_4">
+			<h1>Admission</h1>
+
+			<ul>
+				<li><a href="">About</a></li>
+				<li><a href="">At A Glance</a></li>
+				<li><a href="">History</a></li>
+				<li><a href="">Director's Welcome</a></li>
+				<li><a href="">Other NITs</a></li>
+				<li><a href="">Mission, Vision &amp; Values</a></li>
+			</ul>
+
+			<h1>Campus Safety</h1>
+			
+			<ul>
+				<li><a href="">Campus Safety</a></li>
+			</ul>
+		</div>
+		
+		<div class="col_4">
+			<h1>University Leadership</h1>
+			
+			<ul>
+			<li><a href="">Office of the President</a></li>
+			<li><a href="">Administrative Offices</a></li>
+			</ul>
+
+			<h1>Visiting Campus</h1>
+			
+			<ul>
+			<li><a href="">Visiting Campus</a></li>
+			<li><a href="">Maps and Directions</a></li>
+			<li><a href="">Connect with Us</a></li>
+			</ul>
+		</div>
+		
+		<div class="col_4">
+			<h1>Once students come to NITT, they stay!</h1>
+			<p>Our 90% retention rate beats the national average of 65%, and 20% of our undergraduates go on to receive a graduate degree here.</p>
+		</div>
+
+	</div>
+</div>
+
+<li class="navigate"><a href="#">Departments</a></li>
+
+<div class="menudrop" style="left: 0px; display: none;">
+	<div class="container">
+		<div class="col_4">
+			<h1>Departments</h1>
+
+			<ul>
+				<li><a href="">About</a></li>
+				<li><a href="">At A Glance</a></li>
+				<li><a href="">History</a></li>
+				<li><a href="">Director's Welcome</a></li>
+				<li><a href="">Other NITs</a></li>
+				<li><a href="">Mission, Vision &amp; Values</a></li>
+			</ul>
+
+			<h1>Campus Safety</h1>
+			
+			<ul>
+				<li><a href="">Campus Safety</a></li>
+			</ul>
+		</div>
+		
+		<div class="col_4">
+			<h1>University Leadership</h1>
+			
+			<ul>
+			<li><a href="">Office of the President</a></li>
+			<li><a href="">Administrative Offices</a></li>
+			</ul>
+
+			<h1>Visiting Campus</h1>
+			
+			<ul>
+			<li><a href="">Visiting Campus</a></li>
+			<li><a href="">Maps and Directions</a></li>
+			<li><a href="">Connect with Us</a></li>
+			</ul>
+		</div>
+		
+		<div class="col_4">
+			<h1>Once students come to NITT, they stay!</h1>
+			<p>Our 90% retention rate beats the national average of 65%, and 20% of our undergraduates go on to receive a graduate degree here.</p>
+		</div>
+
+	</div>
+</div>
+
+<li class="navigate"><a href="#">Events</a></li>
+
+<div class="menudrop" style="left: 0px; display: none;">
+	<div class="container">
+		<div class="col_4">
+			<h1>Events</h1>
+
+			<ul>
+				<li><a href="">About</a></li>
+				<li><a href="">At A Glance</a></li>
+				<li><a href="">History</a></li>
+				<li><a href="">Director's Welcome</a></li>
+				<li><a href="">Other NITs</a></li>
+				<li><a href="">Mission, Vision &amp; Values</a></li>
+			</ul>
+
+			<h1>Campus Safety</h1>
+			
+			<ul>
+				<li><a href="">Campus Safety</a></li>
+			</ul>
+		</div>
+		
+		<div class="col_4">
+			<h1>University Leadership</h1>
+			
+			<ul>
+			<li><a href="">Office of the President</a></li>
+			<li><a href="">Administrative Offices</a></li>
+			</ul>
+
+			<h1>Visiting Campus</h1>
+			
+			<ul>
+			<li><a href="">Visiting Campus</a></li>
+			<li><a href="">Maps and Directions</a></li>
+			<li><a href="">Connect with Us</a></li>
+			</ul>
+		</div>
+		
+		<div class="col_4">
+			<h1>Once students come to NITT, they stay!</h1>
+			<p>Our 90% retention rate beats the national average of 65%, and 20% of our undergraduates go on to receive a graduate degree here.</p>
+		</div>
+
+	</div>
+</div>
+
+<li class="navigate"><a href="#">Contact</a></li>
+
+<div class="menudrop" style="left: 0px; display: none;">
+	<div class="container">
+		<div class="col_4">
+			<h1>Contact</h1>
+
+			<ul>
+				<li><a href="">About</a></li>
+				<li><a href="">At A Glance</a></li>
+				<li><a href="">History</a></li>
+				<li><a href="">Director's Welcome</a></li>
+				<li><a href="">Other NITs</a></li>
+				<li><a href="">Mission, Vision &amp; Values</a></li>
+			</ul>
+
+			<h1>Campus Safety</h1>
+			
+			<ul>
+				<li><a href="">Campus Safety</a></li>
+			</ul>
+		</div>
+		
+		<div class="col_4">
+			<h1>University Leadership</h1>
+			
+			<ul>
+			<li><a href="">Office of the President</a></li>
+			<li><a href="">Administrative Offices</a></li>
+			</ul>
+
+			<h1>Visiting Campus</h1>
+			
+			<ul>
+			<li><a href="">Visiting Campus</a></li>
+			<li><a href="">Maps and Directions</a></li>
+			<li><a href="">Connect with Us</a></li>
+			</ul>
+		</div>
+		
+		<div class="col_4">
+			<h1>Once students come to NITT, they stay!</h1>
+			<p>Our 90% retention rate beats the national average of 65%, and 20% of our undergraduates go on to receive a graduate degree here.</p>
+		</div>
+
+	</div>
+</div>
+
+</ul>
+
+</div>
+
+<div id="main-nav-alter">
+          <button type="button" class="navbar-toggle" id="mainmenutoggle" style="cursor: pointer;margin-top: 8px;">
+            <span class="icon-bar"></span>
+           <span class="icon-bar" style="margin-top: 4px;"></span>
+            <span class="icon-bar" style="margin-top: 4px;"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="line-height:2;">Main Menu</a>
+        </div>
+<div id="mainmenu">
+<li><a href="#">About</a></li>
+<li><a href="#">Administration</a></li>
+<li><a href="#">Academic</a></li>
+<li><a href="#">Admission</a></li>
+<li><a href="#">Departments</a></li>
+<li><a href="#">Events</a></li>
+<li><a href="#">Contact</a></li>
+</div>	
+
+MAINNAV;

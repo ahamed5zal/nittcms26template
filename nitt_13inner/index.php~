@@ -1,0 +1,95 @@
+<?php
+if(!defined('__PRAGYAN_CMS')) { 
+	header($_SERVER['SERVER_PROTOCOL'].' 403 Forbidden');
+	echo "<h1>403 Forbidden<h1><h4>You are not authorized to access the page.</h4>";
+	echo '<hr/>'.$_SERVER['SERVER_SIGNATURE'];
+	exit(1);
+}
+@include_once("$sourceFolder/$templateFolder/".TEMPLATE."/includes/header.php");
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="en"> 
+<!--<![endif]-->
+<head>
+  <title>NIT,Trichy</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="description" content="<?php echo $SITEDESCRIPTION ?>" />
+  <meta name="keywords" content="<?php echo $SITEKEYWORDS ?>" /> 
+  <?php global $urlRequestRoot;	global $PAGELASTUPDATED;
+	if($PAGELASTUPDATED!="")
+		echo '<meta http-equiv="Last-Update" content="'.substr($PAGELASTUPDATED,0,10).'" />'."\n";
+  ?>
+  <link rel="stylesheet" type="text/css" href="<?php echo $TEMPLATEBROWSERPATH; ?>/styles/error.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo $TEMPLATEBROWSERPATH; ?>/styles/breadcrumb.css" />
+  <link rel="stylesheet" href="<?php echo $TEMPLATEBROWSERPATH; ?>/styles/form.css">
+  <link rel="stylesheet" href="<?php echo $TEMPLATEBROWSERPATH; ?>/styles/corporate-final.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo $TEMPLATEBROWSERPATH; ?>/styles/main.css"/>
+  <link rel="stylesheet" href="<?php echo $TEMPLATEBROWSERPATH; ?>/styles/translate.css">
+  <link rel="stylesheet" href="<?php echo $TEMPLATEBROWSERPATH; ?>/styles/scroll.css">
+  <link rel="stylesheet" href="<?php echo $TEMPLATEBROWSERPATH; ?>/styles/header.css">
+ <!--[if lte IE 8 ]> 
+  <style>
+    body {
+      min-width:1350px;
+    }
+  </style>
+  <![endif]-->
+  <script language="javascript" type="text/javascript">
+		//defined here for use in javascript
+		var templateBrowserPath = "<?php echo $TEMPLATEBROWSERPATH ?>";
+		var urlRequestRoot = "<?php echo $urlRequestRoot?>";
+  </script>
+</head>
+<body>
+<?php echo $HEADER_CMS; ?>
+<div id="main-view">
+<?php
+if($GLOBALS['pageFullPath']!='/') {
+echo<<<MENUBAR
+  <div id="leftNav" style="float:left">
+    <div id="leftNavContent" class="active">
+            $MENUBAR
+            
+</div>
+
+</div>
+MENUBAR;
+}
+?>
+
+<div id="side" style="float:left">
+<!--<div id="breadCrumb">
+	<a href="">nitt.edu</a>&nbsp;&rarr;&nbsp;<a href="">about</a> 
+</div>
+-->
+<div id="contentcontainer">
+	 <?php $heading='';
+   global $action,$pageId;
+                           if(getTitle($pageId,$action, $heading)) 
+                              echo "<h1 id='contentHeading'>{$heading}</h1>"; 
+                           ?> 
+                            <?php echo $INFOSTRING; ?>
+					     <?php echo $WARNINGSTRING;?>
+					     <?php echo $ERRORSTRING; ?>
+					     <?php if(isset($WIDGETS[0])) echo $WIDGETS[0]; ?>
+					     <?php echo $CONTENT; ?>
+</div>
+</div>
+
+
+</div>
+					     <?php @include_once("$sourceFolder/$templateFolder/".TEMPLATE."/includes/footer.php");
+?>
+<script type="text/javascript" src="<?php echo $TEMPLATEBROWSERPATH; ?>/scripts/jquery.js"></script>
+<script type="text/javascript" src="<?php echo $TEMPLATEBROWSERPATH; ?>/scripts/scroll.js"></script>
+<script type="text/javascript" src="<?php echo $TEMPLATEBROWSERPATH; ?>/scripts/script.js"></script>
+
+ 
+</body>
+
+</html>

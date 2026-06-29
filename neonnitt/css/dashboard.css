@@ -1,0 +1,54 @@
+#action-bar {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    padding: 8px 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+}
+
+#action-bar.collapse {
+    display: none;
+}
+
+#action-bar.collapse.in {
+    display: flex;
+}
+
+#cms-actionbarModule,
+#cms-actionbarPage {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.cms-actionbarModuleItem,
+.cms-actionbarPageItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background: #f5f5f5;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--primary);
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.cms-actionbarModuleItem:hover,
+.cms-actionbarPageItem:hover {
+    background: #eaeaea;
+    border-color: #ccc;
+}
+
+.cms-actionbarPageItem img {
+    max-height: 18px;
+    max-width: 18px;
+    vertical-align: middle;
+}

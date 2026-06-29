@@ -1,0 +1,195 @@
+/* =============================================
+   Admin User Interface
+   Scoped under .cms-admin-boxed (applied to <main>)
+   ============================================= */
+
+/* --- Tables --- */
+.cms-admin-boxed table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 14px;
+}
+.cms-admin-boxed th,
+.cms-admin-boxed td {
+    border: 1px solid #e0e0e0;
+    padding: 8px 12px;
+    vertical-align: top;
+    text-align: left;
+}
+.cms-admin-boxed th {
+    background: #f0f4f8;
+    text-align: center;
+    color: var(--primary, #012951);
+    font-weight: 600;
+}
+.cms-admin-boxed tr:hover {
+    background: #fafbfc;
+}
+
+/* --- Icons Panel --- */
+.cms-admin-boxed table.iconspanel {
+    width: 100%;
+    border: none;
+}
+.cms-admin-boxed table.iconspanel img {
+    border: none;
+}
+.cms-admin-boxed table.iconspanel td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.cms-admin-boxed table.iconspanel td:hover {
+    background-color: #f0f4f8;
+}
+.cms-admin-boxed table.iconspanel td a {
+    text-decoration: none;
+}
+
+/* --- Form Extras --- */
+.cms-admin-boxed div.formfieldextrainfo {
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    padding: 8px;
+    margin: 5px 0;
+    background: #fafafa;
+}
+.cms-admin-boxed div.formfieldred {
+    border: 1px solid #e74c3c;
+    background-color: #fde8e8;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+}
+.cms-admin-boxed div.formfieldgreen {
+    border: 1px solid #27ae60;
+    background-color: #e8f8e8;
+    text-align: center;
+    padding: 8px;
+}
+.cms-admin-boxed div.formfieldinfo {
+    background-color: #e0edf7;
+    text-align: center;
+    padding: 8px;
+}
+
+/* --- Full Width Table --- */
+.cms-admin-boxed table.pragyan_fulltable {
+    width: 100%;
+}
+
+/* --- Article Comments --- */
+.cms-admin-boxed div.articlecomment {
+    border: 1px solid #e0e0e0;
+    margin: 5px;
+    padding: 10px;
+    background: #fafafa;
+}
+.cms-admin-boxed span.articlecomment_info {
+    font-size: 90%;
+    font-style: italic;
+}
+.cms-admin-boxed a.commentdelete img {
+    float: right;
+}
+
+/* --- Gallery --- */
+.cms-admin-boxed div.galleryimagebox {
+    border: 1px solid #e0e0e0;
+    float: left;
+    margin: 5px;
+    padding: 10px;
+    width: 200px;
+}
+.cms-admin-boxed span.pragyangallery {
+    margin: 10px;
+}
+
+/* --- User Tables --- */
+.cms-admin-boxed table.userlisttable tr.oddrow {
+    background: #f9f9f9;
+}
+.cms-admin-boxed table.userlisttable tr.evenrow {
+    background: #fff;
+}
+.cms-admin-boxed table.userlisttable tr:hover {
+    background: #f0f4f8;
+}
+
+/* --- Tab Bar --- */
+.cms-admin-boxed #tabBar table {
+    border: none;
+    margin: 0;
+}
+.cms-admin-boxed #tabBar td {
+    border: none;
+    padding: 0;
+}
+.cms-admin-boxed #tabBar button {
+    background: #f0f4f8;
+    border: 1px solid #e0e0e0;
+    border-bottom: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary, #012951);
+    transition: background 0.2s;
+}
+.cms-admin-boxed #tabBar button:hover {
+    background: #e4eaf2;
+}
+
+/* --- Registration & Login Forms --- */
+.cms-admin-boxed .cms-registrationform table,
+.cms-admin-boxed .registrationform table,
+.cms-admin-boxed #pragyan_loginform table {
+    margin: 0 auto;
+    border: none;
+}
+.cms-admin-boxed .cms-registrationform td,
+.cms-admin-boxed .registrationform td,
+.cms-admin-boxed #pragyan_loginform td {
+    border: none;
+    padding: 6px 10px;
+    vertical-align: middle;
+}
+.cms-admin-boxed .labelrequired {
+    font-weight: 600;
+    color: #333;
+}
+.cms-admin-boxed .labelrequired::after {
+    content: " *";
+    color: #e74c3c;
+}
+
+/* --- Search Box --- */
+.cms-admin-boxed .searchBox {
+    margin: 0 auto;
+    width: auto;
+    border: none;
+}
+.cms-admin-boxed .searchBox td {
+    border: none;
+    padding: 8px;
+}
+.cms-admin-boxed .searchBox table {
+    border: none;
+    margin: 0;
+}
+.cms-admin-boxed .searchBox table td {
+    border: none;
+    padding: 4px;
+}
+
+/* --- Page Settings --- */
+.cms-admin-boxed #page_settings {
+    padding: 10px 0;
+}
+.cms-admin-boxed #page_settings fieldset table {
+    border: 1px solid #e0e0e0;
+}
