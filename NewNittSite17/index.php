@@ -472,7 +472,7 @@ https://twitter.com/ReachNITT"><i style="color:white;" onmouseover="this.style.c
 
 <script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery.blockUI.min.js' defer></script>
 <script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery.cookie.min.js' defer></script>
-<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/bootstrap.min.js' defer></script>
+<script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/bootstrap.min.js' integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous" defer></script>
 <script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/jquery.fitvids.js' defer></script>
 <script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/selectize.min.js' defer></script>
 <script type='text/javascript' src='<?php echo $TEMPLATEBROWSERPATH; ?>/extras/icheck.min.js' defer></script>
