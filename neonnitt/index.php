@@ -66,10 +66,10 @@
             <div class="container-wide">
                 <div class="secondary-nav-inner">
                     <ul class="secondary-nav-left">
-                        <li><a href="<?php echo $urlRequestRoot; ?>/home/students/facilitiesnservices/tp/">Placements</a></li>
                         <li><a href="<?php echo $urlRequestRoot; ?>/home/students/facilitiesnservices/library/">Library</a></li>
                         <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/departments/">Departments</a></li>
-                        <li><a href="<?php echo $urlRequestRoot; ?>/home/students/events/">Events</a></li>
+                        <?php $isHome = ($_SERVER['REQUEST_URI'] === '/' || preg_match('#^/home/?(\?.*)?$#', $_SERVER['REQUEST_URI'])); ?>
+                        <li><a href="<?php echo $isHome ? '#notices' : $urlRequestRoot . '/home/#notices'; ?>">Events</a></li>
                         <li><a href="<?php echo $urlRequestRoot; ?>/home/students/facilitiesnservices/ComputerSupportGroup/">CC</a></li>
                         <li><a href="#" data-toggle="collapse" data-target="#translate-bar">Translate</a></li>
                         <li><a target="_blank" href="https://www.facebook.com/NITT.Official/"><i class="fa fa-facebook"></i></a></li>

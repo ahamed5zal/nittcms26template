@@ -140,12 +140,10 @@ function googleTranslateElementInit() {
             <div class="container">
 
                 <ul data-breakpoint="800" id="menu-top-menu-0" class="secondary-navigation list-unstyled pull-left">
-                <li id="menu-item-1" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1"><a  title="Webmail" href="<?php echo $urlRequestRoot; ?>/home/students/facilitiesnservices/tp/">Placements</a>
-                </li>
                 <li id="menu-item-2" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2"><a  title="Library" href="<?php echo $urlRequestRoot; ?>/home/students/facilitiesnservices/library/">Library</a></li>
                 <li id="menu-item-3" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3"><a  title="Departments" href="<?php echo $urlRequestRoot; ?>/home/academics/departments/">Departments</a>
                 </li>
-		<li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4"><a  title="Events" href="<?php echo $urlRequestRoot; ?>/home/students/events/">Events</a>
+		<li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4"><a target="_blank" title="Events" href="<?php echo $urlRequestRoot; ?>/home/#notices">Events</a>
                 </li>
 		<li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5"><a  title="CC" href="<?php echo $urlRequestRoot; ?>/home/students/facilitiesnservices/ComputerSupportGroup/">CC</a>
                 </li>
