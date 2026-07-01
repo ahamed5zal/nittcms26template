@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Auto-class tables for CMS content
+    document.querySelectorAll('table').forEach(function(t) { t.classList.add('nitttable'); });
+
     // Hero Swiper
     var heroSwiper = new Swiper('.heroSwiper', {
         loop: true,
@@ -35,11 +38,30 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
-    // Hamburger toggle
+    // Hamburger toggle (homepage = main-nav, inner page = sidebar drawer)
     var toggleBtn = document.querySelector('.navbar-toggle');
+    var isHomepage = document.querySelector('main:not(.page-with-sidebar)');
     if (toggleBtn) {
         toggleBtn.addEventListener('click', function () {
-            document.querySelector('.main-nav').classList.toggle('open');
+            if (isHomepage) {
+                document.querySelector('.main-nav').classList.toggle('open');
+            } else {
+                var sidebar = document.querySelector('.inner-sidebar');
+                var overlay = document.querySelector('.inner-sidebar-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'inner-sidebar-overlay';
+                    document.body.appendChild(overlay);
+                    overlay.addEventListener('click', function () {
+                        sidebar?.classList.remove('open');
+                        this.classList.remove('open');
+                    });
+                }
+                if (sidebar) {
+                    sidebar.classList.toggle('open');
+                    overlay.classList.toggle('open');
+                }
+            }
         });
     }
 
@@ -58,8 +80,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.main-nav .nav-list > li.has-dropdown > a, .main-nav .nav-list > li.has-mega-menu > a').forEach(function (link) {
         link.addEventListener('click', function (e) {
             if (window.innerWidth <= 991) {
-                e.preventDefault();
-                this.parentElement.classList.toggle('open');
+                if (!this.parentElement.classList.contains('open')) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('open');
+                }
             }
         });
     });
@@ -150,6 +174,18 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
         observer.observe(statsSection);
+    }
+
+    // Match sidebar height to content container
+    var contentInner = document.querySelector('.inner-content');
+    var sidebarEl = document.querySelector('.inner-sidebar');
+    if (contentInner && sidebarEl) {
+        function matchSidebar() {
+            sidebarEl.style.maxHeight = contentInner.offsetHeight + 'px';
+        }
+        matchSidebar();
+        var ro = new ResizeObserver(matchSidebar);
+        ro.observe(contentInner);
     }
 
 });

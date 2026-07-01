@@ -19,7 +19,7 @@ $HEADER_CMS=<<<TOPNAV
        <div id="google_translate_element"></div>
  <script type="text/javascript">
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, includedLanguages: 'hi,ta'}, 'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 }
 </script><!--     <div class="searchBoxContainer">
         <input class="searchBox" title="search NITT" type="text" name="search" placeholder="search NITT">

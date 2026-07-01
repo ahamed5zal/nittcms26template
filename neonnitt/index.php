@@ -4,10 +4,20 @@
     echo "<h1>403 Forbidden<h1><h4>You are not authorized to access the page.</h4>";
     echo '<hr>' . $_SERVER['SERVER_SIGNATURE'];exit(1);
     }
-    global $userId, $action, $urlRequestRoot, $pageId;
+    global $userId, $action, $urlRequestRoot, $pageId, $MENUBAR, $BREADCRUMB, $WIDGETS;
     if ($userId != 0 && $action == 'login' && $GLOBALS['pageFullPath'] == '/') {
     $urlRequestRoot = isset($urlRequestRoot) ? $urlRequestRoot : '';
     header('Location: ' . $urlRequestRoot . '/');
+    }
+    $isHomepage = (!isset($GLOBALS['pageFullPath']) || $GLOBALS['pageFullPath'] == '/') && $action != 'search' && $action != 'login';
+    $heading = '';
+    $pageTitle = '';
+    if (function_exists('getTitle')) {
+        if (getTitle($pageId, $action, $heading)) {
+            $pageTitle = $heading;
+        }
+    } elseif (isset($GLOBALS['pageName'])) {
+        $pageTitle = $GLOBALS['pageName'];
     }
 ?>
 <!DOCTYPE html>
@@ -22,6 +32,7 @@
     <meta name="robots" content="noindex, follow" />
 <?php } ?>
     <title><?php echo $TITLE ?></title>
+    <?php echo $BREADCRUMB; ?>
 
     <script type=application/ld+json>{ "@context" : "https://schema.org", "@type" : "WebSite", "name" : "NIT Trichy", "alternateName" : "National Institute of Technology, Tiruchirappalli", "url" : "https://www.nitt.edu" }</script>
 
@@ -37,8 +48,8 @@
     <link rel='stylesheet' href='/cms/templates/neonnitt/css/form.css' type='text/css' media='print' onload="this.media='all'" />
     <link rel='stylesheet' href='/cms/templates/neonnitt/css/dashboard.css' type='text/css' media='print' onload="this.media='all'" />
 
-    <script src='/cms/templates/neonnitt/extras/jquery.js' defer></script>
-    <script src='/cms/templates/neonnitt/extras/jquery-migrate.min.js' defer></script>
+    <script src='/cms/templates/neonnitt/extras/jquery.js'></script>
+    <script src='/cms/templates/neonnitt/extras/jquery-migrate.min.js'></script>
 
     <link rel="icon" href="/cms/templates/neonnitt/images/nittlogo-150x150.jpg" sizes="32x32" />
     <link rel="icon" href="/cms/templates/neonnitt/images/nittlogo-300x300.jpg" sizes="192x192" />
@@ -50,7 +61,7 @@
     </style>
     <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, includedLanguages: 'hi,ta'}, 'google_translate_element');
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
     </script>
 </head>
@@ -66,10 +77,10 @@
             <div class="container-wide">
                 <div class="secondary-nav-inner">
                     <ul class="secondary-nav-left">
+                        <li><a href="<?php echo $urlRequestRoot; ?>/home/students/facilitiesnservices/tp/">Placements</a></li>
                         <li><a href="<?php echo $urlRequestRoot; ?>/home/students/facilitiesnservices/library/">Library</a></li>
                         <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/departments/">Departments</a></li>
-                        <?php $isHome = ($_SERVER['REQUEST_URI'] === '/' || preg_match('#^/home/?(\?.*)?$#', $_SERVER['REQUEST_URI'])); ?>
-                        <li><a href="<?php echo $isHome ? '#notices' : $urlRequestRoot . '/home/#notices'; ?>">Events</a></li>
+                        <li><a href="<?php echo $urlRequestRoot; ?>/home/students/events/">Events</a></li>
                         <li><a href="<?php echo $urlRequestRoot; ?>/home/students/facilitiesnservices/ComputerSupportGroup/">CC</a></li>
                         <li><a href="#" data-toggle="collapse" data-target="#translate-bar">Translate</a></li>
                         <li><a target="_blank" href="https://www.facebook.com/NITT.Official/"><i class="fa fa-facebook"></i></a></li>
@@ -119,11 +130,54 @@
                 <div class="container-wide">
                     <nav class="main-nav">
                         <ul class="nav-list">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="<?php echo $urlRequestRoot; ?>/about/">About Us</a></li>
-                            <li><a href="<?php echo $urlRequestRoot; ?>/administration/">Administration</a></li>
-                            <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/">Academic</a></li>
-                            <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/">Admission</a></li>
+<li><a href="<?php echo $urlRequestRoot; ?>/">Home</a></li>
+                            <li class="has-dropdown">
+                                <a href="<?php echo $urlRequestRoot; ?>/about/">About Us <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/nit-council">Council of NITs</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/about/ataglance/">NITT at a Glance</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/about/nitt/">NIT Tiruchirappalli</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="<?php echo $urlRequestRoot; ?>/administration/">Administration <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/bog/">Board of Governors</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/director/">Director</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/chairperson/">Chairperson</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/registrar/">Registrar</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/registrar/">CVO</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/deans/">Deans</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/hods/">Heads of the Department</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="<?php echo $urlRequestRoot; ?>/home/academics/">Academic <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/programmes/">Programmes</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/admission_procedure/">Admission Procedure</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/ug_section/">UG Section</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/pg_section/">PG Section</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/ms_and_phd_section/">MS and PhD Section</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/scholarships/">Scholarships</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/curriculum/">Curriculum & Syllabus</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-dropdown">
+                                <a href="<?php echo $urlRequestRoot; ?>/home/admissions/">Admission <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/btech/">B. Tech. / B. Arch.</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/mtech/">M. Tech. / M. Arch.</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/msc/">M. Sc.</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/mca/">MCA</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/mba/">MBA</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/ma/">MA</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/ms/">M.S. (by Research)</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/phd/">Ph. D.</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/pdf/">Post Doctoral Fellowship (MeitY)</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/bscbed/">B.Sc. B.Ed.</a></li>
+                                </ul>
+                            </li>
                             <li class="has-mega-menu">
                                 <a href="<?php echo $urlRequestRoot; ?>/home/academics/departments/">Departments / Centres <span class="caret"></span></a>
                                 <div class="mega-menu">
@@ -185,7 +239,17 @@
                                     </div>
                                 </div>
                             </li>
-                            <li><a target="_blank" href="https://rc.nitt.edu">Research & Consultancy</a></li>
+                            <li class="has-dropdown">
+                                <a href="<?php echo $urlRequestRoot; ?>/home/administration/deans/">Dean Offices <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Academic</a></li>
+                                    <li><a href="#">Faculty Welfare</a></li>
+                                    <li><a href="#">Institutional Development & Alumni Relations</a></li>
+                                    <li><a href="#">Planning and Development</a></li>
+                                    <li><a href="#">Research and Consultancy</a></li>
+                                    <li><a href="#">Students Welfare</a></li>
+                                </ul>
+                            </li>
                             <li class="has-dropdown">
                                 <a href="#">Important Links <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -202,9 +266,13 @@
         </div>
     </div>
 
-    <!-- ========== INFO MESSAGES ========== -->
-    <main <?php if(isset($action) && $action != 'view') echo 'class="cms-admin-boxed"'; ?>>
-
+    <!-- ========== MAIN CONTENT ========== -->
+    <?php
+    $isAdmin = isset($action) && $action != 'view';
+    $isViewHomepage = $isHomepage && !$isAdmin;
+    ?>
+    <?php if ($isViewHomepage): ?>
+    <main>
     <div class="info">
         <span><?php echo $ERRORSTRING; ?></span>
         <span><?php echo $WARNINGSTRING; ?></span>
@@ -212,6 +280,27 @@
     </div>
     <?php echo $CONTENT; ?>
     </main>
+    <?php else: ?>
+    <main class="<?php if (!$isHomepage) echo 'page-with-sidebar'; ?><?php if ($isAdmin) echo ' cms-admin-boxed'; ?>">
+    <?php if (!$isHomepage): ?>
+    <div class="inner-page-grid">
+        <aside id="leftNav" class="inner-sidebar"><?php echo $MENUBAR; ?></aside>
+    <?php endif; ?>
+        <div class="inner-content">
+            <div id="contentcontainer">
+                <?php if ($pageTitle): ?><h1 id="contentHeading"><?php echo $pageTitle; ?></h1><?php endif; ?>
+                <?php echo $INFOSTRING; ?>
+                <?php echo $WARNINGSTRING; ?>
+                <?php echo $ERRORSTRING; ?>
+                <?php echo (isset($WIDGETS[0]) ? $WIDGETS[0] : ''); ?>
+                <?php echo $CONTENT; ?>
+            </div>
+        </div>
+    <?php if (!$isHomepage): ?>
+    </div>
+    <?php endif; ?>
+    </main>
+    <?php endif; ?>
 
     <!-- ========== FOOTER ========== -->
     <footer id="page-footer">
@@ -286,18 +375,12 @@
                 </div>
             </div>
         </section>
-
-        <div style="display: none;">
-            <?php echo $FOOTER; ?>
-            <?php echo $BREADCRUMB; ?>
-            <?php echo $MENUBAR; ?>
-        </div>
     </footer>
 
 </div><!-- /#wrapper -->
 
 <script src='/cms/templates/neonnitt/extras/swiper-bundle.min.js' defer></script>
-<script src='/cms/templates/neonnitt/extras/custom.js' defer></script>
+<script src='/cms/templates/neonnitt/extras/custom.js'></script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
