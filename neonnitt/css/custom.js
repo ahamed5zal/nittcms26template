@@ -24,11 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.setAttribute('aria-label', 'Skip to main content');
         btn.innerHTML = '\u2193';
         btn.addEventListener('click', function () {
-            var navH = document.querySelector('.navigation-wrapper').offsetHeight;
-            window.scrollTo({
-                top: missionSection.getBoundingClientRect().top + window.pageYOffset - navH + 55,
-                behavior: 'smooth'
-            });
+            missionSection.scrollIntoView({ behavior: 'smooth' });
         });
         document.body.appendChild(btn);
         var heroHeight = heroCarousel.offsetHeight;
@@ -229,68 +225,16 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(statsSection);
     }
 
-    // Collapse only the sibling menu; keep the current page children menu open.
-    var sidebar = document.querySelector('.inner-sidebar');
-    if (sidebar) {
-        var siblingHead = sidebar.querySelector('.cms-menuhead');
-        var siblingHeadBlock = siblingHead ? (siblingHead.closest('a') || siblingHead) : null;
-        var siblingMenuBlock = null;
-        var siblingHeadHref = siblingHeadBlock && siblingHeadBlock.tagName && siblingHeadBlock.tagName.toLowerCase() === 'a' ? siblingHeadBlock.getAttribute('href') : '#';
-
-        if (siblingHeadBlock) {
-            var cursor = siblingHeadBlock.nextElementSibling;
-            while (cursor && !cursor.querySelector('.cms-menuhead') && !cursor.classList.contains('cms-menuhead')) {
-                if (cursor.tagName && cursor.tagName.toLowerCase() === 'ul') {
-                    siblingMenuBlock = cursor;
-                    break;
-                }
-                if (cursor.querySelector('ul')) {
-                    siblingMenuBlock = cursor;
-                    break;
-                }
-                cursor = cursor.nextElementSibling;
-            }
+    // Match sidebar height to content container
+    var contentInner = document.querySelector('.inner-content');
+    var sidebarEl = document.querySelector('.inner-sidebar');
+    if (contentInner && sidebarEl) {
+        function matchSidebar() {
+            sidebarEl.style.maxHeight = contentInner.offsetHeight + 'px';
         }
-
-        if (siblingHead && siblingHeadBlock && siblingMenuBlock) {
-            var heading = document.createElement('div');
-            heading.className = 'cms-menuhead sibling-menu-heading';
-            heading.setAttribute('aria-expanded', 'false');
-
-            var titleLink = document.createElement('a');
-            titleLink.className = 'sibling-menu-parent-link';
-            titleLink.href = siblingHeadHref || '#';
-            titleLink.textContent = siblingHead.textContent;
-
-            var toggle = document.createElement('button');
-            toggle.type = 'button';
-            toggle.className = 'sibling-menu-toggle';
-            toggle.setAttribute('aria-expanded', 'false');
-
-            var toggleCaret = document.createElement('span');
-            toggleCaret.className = 'caret';
-
-            toggle.appendChild(toggleCaret);
-            heading.appendChild(titleLink);
-            heading.appendChild(toggle);
-            siblingMenuBlock.classList.add('sibling-menu-list', 'is-collapsed');
-            siblingHeadBlock.replaceWith(heading);
-
-            toggle.addEventListener('click', function () {
-                var isCollapsed = siblingMenuBlock.classList.toggle('is-collapsed');
-                heading.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
-                toggle.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
-            });
-            heading.addEventListener('click', function (e) {
-                if (e.target.closest('a') || e.target.closest('button')) {
-                    return;
-                }
-                var isCollapsed = siblingMenuBlock.classList.toggle('is-collapsed');
-                heading.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
-                toggle.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
-            });
-        }
+        matchSidebar();
+        var ro = new ResizeObserver(matchSidebar);
+        ro.observe(contentInner);
     }
 
-    
 });

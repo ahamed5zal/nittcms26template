@@ -51,10 +51,7 @@
     <script src='/cms/templates/neonnitt/extras/jquery.js'></script>
     <script src='/cms/templates/neonnitt/extras/jquery-migrate.min.js'></script>
 
-    <link rel="icon" href="/cms/templates/neonnitt/images/nittlogo-150x150.jpg" sizes="32x32" />
-    <link rel="icon" href="/cms/templates/neonnitt/images/nittlogo-300x300.jpg" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="/cms/templates/neonnitt/images/nittlogo-300x300.jpg" />
-    <meta name="msapplication-TileImage" content="/cms/templates/neonnitt/images/nittlogo-300x300.jpg" />
+    <link rel="icon" href="<?php echo $TEMPLATEBROWSERPATH; ?>/images/nittlogo-300x300.png" type="image/png" />
 
     <style>
     body{font-weight:normal;font-style:normal;}
@@ -82,11 +79,16 @@
                         <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/departments/">Departments</a></li>
                         <li><a href="<?php echo $urlRequestRoot; ?>/home/students/events/">Events</a></li>
                         <li><a href="<?php echo $urlRequestRoot; ?>/home/students/facilitiesnservices/ComputerSupportGroup/">CC</a></li>
-                        <li><a href="#" data-toggle="collapse" data-target="#translate-bar">Translate</a></li>
-                        <li><a target="_blank" href="https://www.facebook.com/NITT.Official/"><i class="fa fa-facebook"></i></a></li>
-                        <li><a target="_blank" href="https://twitter.com/ReachNITT"><i class="fa fa-twitter"></i></a></li>
-                        <li><a target="_blank" href="https://www.youtube.com/channel/UCEPOEe5azp3FbUjvMwttPqw"><i class="fa fa-youtube-play"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="nav-more">
+                            <a href="#" class="nav-more-trigger">More <span class="caret"></span></a>
+                            <ul class="nav-more-menu">
+                                <li><a href="#" data-toggle="collapse" data-target="#translate-bar">Translate</a></li>
+                                <li><a target="_blank" href="https://www.facebook.com/NITT.Official/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="https://twitter.com/ReachNITT"><i class="fa fa-twitter"></i></a></li>
+                                <li><a target="_blank" href="https://www.youtube.com/channel/UCEPOEe5azp3FbUjvMwttPqw"><i class="fa fa-youtube-play"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <div class="secondary-nav-search">
                         <button type="button" onclick="window.location.href='<?php echo $urlRequestRoot; ?>/search'"><i class="fa fa-search"></i></button>
@@ -116,15 +118,14 @@
         <div class="primary-navigation-wrapper">
             <header id="top">
                 <div class="container-wide nav-header">
-                    <a class="logo" href="#">
+                    <a class="logo" href="<?php echo $urlRequestRoot; ?>/home/">
                         <img src="/cms/templates/neonnitt/images/nitt.png" class="logo-desktop" alt="">
                         <img src="/cms/templates/neonnitt/images/nittt-mob-latest.png" class="logo-mobile" alt="">
                     </a>
                     <button class="navbar-toggle" type="button">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="hamburger-icon">☰</span>
+                        <span class="close-icon">✕</span>
                     </button>
                 </div>
                 <div class="container-wide">
@@ -132,7 +133,8 @@
                         <ul class="nav-list">
 <li><a href="<?php echo $urlRequestRoot; ?>/">Home</a></li>
                             <li class="has-dropdown">
-                                <a href="<?php echo $urlRequestRoot; ?>/about/">About Us <span class="caret"></span></a>
+                                <a href="<?php echo $urlRequestRoot; ?>/about/">About Us</a>
+                                <span class="dropdown-toggle"><span class="caret"></span></span>
                                 <ul class="dropdown-menu">
                                     <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/nit-council">Council of NITs</a></li>
                                     <li><a href="<?php echo $urlRequestRoot; ?>/home/about/ataglance/">NITT at a Glance</a></li>
@@ -140,7 +142,8 @@
                                 </ul>
                             </li>
                             <li class="has-dropdown">
-                                <a href="<?php echo $urlRequestRoot; ?>/administration/">Administration <span class="caret"></span></a>
+                                <a href="<?php echo $urlRequestRoot; ?>/administration/">Administration</a>
+                                <span class="dropdown-toggle"><span class="caret"></span></span>
                                 <ul class="dropdown-menu">
                                     <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/bog/">Board of Governors</a></li>
                                     <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/director/">Director</a></li>
@@ -152,7 +155,8 @@
                                 </ul>
                             </li>
                             <li class="has-dropdown">
-                                <a href="<?php echo $urlRequestRoot; ?>/home/academics/">Academic <span class="caret"></span></a>
+                                <a href="<?php echo $urlRequestRoot; ?>/home/academics/">Academic</a>
+                                <span class="dropdown-toggle"><span class="caret"></span></span>
                                 <ul class="dropdown-menu">
                                     <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/programmes/">Programmes</a></li>
                                     <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/admission_procedure/">Admission Procedure</a></li>
@@ -164,7 +168,8 @@
                                 </ul>
                             </li>
                             <li class="has-dropdown">
-                                <a href="<?php echo $urlRequestRoot; ?>/home/admissions/">Admission <span class="caret"></span></a>
+                                <a href="<?php echo $urlRequestRoot; ?>/home/admissions/">Admission</a>
+                                <span class="dropdown-toggle"><span class="caret"></span></span>
                                 <ul class="dropdown-menu">
                                     <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/btech/">B. Tech. / B. Arch.</a></li>
                                     <li><a href="<?php echo $urlRequestRoot; ?>/home/admissions/mtech/">M. Tech. / M. Arch.</a></li>
@@ -179,7 +184,8 @@
                                 </ul>
                             </li>
                             <li class="has-mega-menu">
-                                <a href="<?php echo $urlRequestRoot; ?>/home/academics/departments/">Departments / Centres <span class="caret"></span></a>
+                                <a href="<?php echo $urlRequestRoot; ?>/home/academics/departments/">Departments / Centres</a>
+                                <span class="dropdown-toggle"><span class="caret"></span></span>
                                 <div class="mega-menu">
                                     <div class="mega-menu-inner">
                                         <p class="mega-title"><a href="<?php echo $urlRequestRoot; ?>/academics/departments/">Departments / Centres</a></p>
@@ -240,18 +246,20 @@
                                 </div>
                             </li>
                             <li class="has-dropdown">
-                                <a href="<?php echo $urlRequestRoot; ?>/home/administration/deans/">Dean Offices <span class="caret"></span></a>
+                                <a href="<?php echo $urlRequestRoot; ?>/home/administration/deans/">Dean Offices</a>
+                                <span class="dropdown-toggle"><span class="caret"></span></span>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Academic</a></li>
-                                    <li><a href="#">Faculty Welfare</a></li>
-                                    <li><a href="#">Institutional Development & Alumni Relations</a></li>
-                                    <li><a href="#">Planning and Development</a></li>
-                                    <li><a href="#">Research and Consultancy</a></li>
-                                    <li><a href="#">Students Welfare</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/academics/">Academic</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/administration/office/">Faculty Welfare</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/id/">Institutional Development & Alumni Relations</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/pd/projects/">Planning and Development</a></li>
+                                    <li><a href="https://rc.nitt.edu/">Research and Consultancy</a></li>
+                                    <li><a href="<?php echo $urlRequestRoot; ?>/home/students/">Students Welfare</a></li>
                                 </ul>
                             </li>
                             <li class="has-dropdown">
-                                <a href="#">Important Links <span class="caret"></span></a>
+                                <a href="#">Important Links</a>
+                                <span class="dropdown-toggle"><span class="caret"></span></span>
                                 <ul class="dropdown-menu">
                                     <li><a href="<?php echo $urlRequestRoot; ?>/students/facilitiesnservices/tp/">Placements</a></li>
                                     <li><a href="<?php echo $urlRequestRoot; ?>/sitemap">Sitemap</a></li>
@@ -378,6 +386,9 @@
     </footer>
 
 </div><!-- /#wrapper -->
+
+<div class="mobile-drawer-overlay"></div>
+<div class="mobile-drawer"><div class="mobile-drawer-inner"></div></div>
 
 <script src='/cms/templates/neonnitt/extras/swiper-bundle.min.js' defer></script>
 <script src='/cms/templates/neonnitt/extras/custom.js'></script>
