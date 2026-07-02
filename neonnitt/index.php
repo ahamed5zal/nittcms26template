@@ -51,7 +51,10 @@
     <script src='/cms/templates/neonnitt/extras/jquery.js'></script>
     <script src='/cms/templates/neonnitt/extras/jquery-migrate.min.js'></script>
 
-    <link rel="icon" href="<?php echo $TEMPLATEBROWSERPATH; ?>/images/nittlogo-300x300.png" type="image/png" />
+    <link rel="icon" href="<?php echo $TEMPLATEBROWSERPATH; ?>/images/nittlogo-150x150.jpg" sizes="32x32" />
+    <link rel="icon" href="<?php echo $TEMPLATEBROWSERPATH; ?>/images/nittlogo-300x300.jpg" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="<?php echo $TEMPLATEBROWSERPATH; ?>/images/nittlogo-300x300.jpg" />
+    <meta name="msapplication-TileImage" content="<?php echo $TEMPLATEBROWSERPATH; ?>/images/nittlogo-300x300.jpg" />
 
     <style>
     body{font-weight:normal;font-style:normal;}
@@ -354,7 +357,7 @@
                             <li><a href="<?php echo $urlRequestRoot; ?>/other/tenders">Tenders and Notices</a></li>
                             <li><a href="<?php echo $urlRequestRoot; ?>/other/jobs">Job Opportunities</a></li>
                             <li><a href="<?php echo $urlRequestRoot; ?>/righttoinfoact">RTI</a></li>
-                            <li><a href="http://alumni.nitt.edu" target="_blank">Alumni</a></li>
+                            <li><a href="https://alumni.nitt.edu" target="_blank">Alumni</a></li>
                             <li><a href="<?php echo $urlRequestRoot; ?>/sitemap">Sitemap</a></li>
                         </ul>
                     </div>
@@ -376,7 +379,7 @@
                         <p>&copy; <a href="<?php echo $urlRequestRoot; ?>/webteam">WebTeam NIT Trichy</a><br><span>National Institute of Technology, Tiruchirappalli</span></p>
                     </div>
                     <ul class="footer-nav">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="<?php echo $urlRequestRoot; ?>/">Home</a></li>
                         <li><a href="<?php echo $urlRequestRoot; ?>/about">About</a></li>
                         <li><a href="<?php echo $urlRequestRoot; ?>/contact">Contact</a></li>
                     </ul>

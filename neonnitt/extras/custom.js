@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var btn = document.createElement('button');
         btn.className = 'scroll-down';
         btn.setAttribute('aria-label', 'Skip to main content');
-        btn.innerHTML = '\u2193';
+        btn.innerHTML = 'Skip to main content';
         btn.addEventListener('click', function () {
             var navH = document.querySelector('.navigation-wrapper').offsetHeight;
             window.scrollTo({
