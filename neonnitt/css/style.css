@@ -1658,8 +1658,8 @@ main.has-hero-carousel {
 #contentcontainer .facitem img {
     float: left;
     max-width: none;
-    width: 100px;
-    height: 100px;
+    width: 100px !important;
+    height: 100px !important;
     border-radius: 50%;
     padding: 0;
     margin: 20px;

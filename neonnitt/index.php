@@ -51,10 +51,7 @@
     <script src='/cms/templates/neonnitt/extras/jquery.js'></script>
     <script src='/cms/templates/neonnitt/extras/jquery-migrate.min.js'></script>
 
-    <link rel="icon" href="<?php echo $TEMPLATEBROWSERPATH; ?>/images/nittlogo-150x150.jpg" sizes="32x32" />
-    <link rel="icon" href="<?php echo $TEMPLATEBROWSERPATH; ?>/images/nittlogo-300x300.jpg" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="<?php echo $TEMPLATEBROWSERPATH; ?>/images/nittlogo-300x300.jpg" />
-    <meta name="msapplication-TileImage" content="<?php echo $TEMPLATEBROWSERPATH; ?>/images/nittlogo-300x300.jpg" />
+    <link rel="icon" href="<?php echo $TEMPLATEBROWSERPATH; ?>/images/logo.jpg" type="image/jpeg" />
 
     <style>
     body{font-weight:normal;font-style:normal;}
